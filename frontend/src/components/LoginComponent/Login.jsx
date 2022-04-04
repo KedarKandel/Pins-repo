@@ -23,6 +23,7 @@ const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
       setCurrentUser(res.data.username);
       setShowLogin(false);
       setFailure(false);
+      window.location.reload();
     } catch (err) {
       setFailure(true);
     }
