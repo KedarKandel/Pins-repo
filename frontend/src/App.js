@@ -8,7 +8,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import * as dayjs from "dayjs";
 import Login from "./components/LoginComponent/Login";
 import Register from "./components/RegisterComponent/Register";
-import axios from "axios";
+import { axiosInstance } from "./config";
 
 
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -45,7 +45,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("/api/pins");
+        const res = await axiosInstance.get("/api/pins");
         setPins(res.data);
       } catch (err) {
         console.log(err);
@@ -76,7 +76,7 @@ function App() {
       long: newPlace.long,
     };
     try {
-      const res = await axios.post("api/pins", newPin);
+      const res = await axiosInstance.post("api/pins", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
