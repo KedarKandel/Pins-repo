@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-import { axiosInstance } from "../../config";
+import axios from "axios";
 
 const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
   const [failure, setFailure] = useState(false);
@@ -18,7 +18,7 @@ const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
       password: passwordRef.current.value,
     };
     try {
-      const res = await axiosInstance.post("api/users/login", user);
+      const res = await axios.post("api/users/login", user);
       myStorage.setItem("user", res.data.username);
       setCurrentUser(res.data.username);
       setShowLogin(false);

@@ -2,7 +2,7 @@ import "./register.css";
 import { useRef, useState } from "react";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { axiosInstance } from "../../config";
+import axios from "axios";
 
 const Register = ({ setShowRegister }) => {
   const [success, setSuccess] = useState(false);
@@ -19,7 +19,7 @@ const Register = ({ setShowRegister }) => {
       password: passwordRef.current.value,
     };
     try {
-      await axiosInstance.post("api/users/register", newUser);
+      await axios.post("api/users/register", newUser);
       setFailure(false);
       setSuccess(true);
     } catch (err) {
