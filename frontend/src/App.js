@@ -8,6 +8,7 @@ import * as dayjs from "dayjs";
 import Login from "./components/LoginComponent/Login";
 import Register from "./components/RegisterComponent/Register";
 import axios from "axios";
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
