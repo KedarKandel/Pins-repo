@@ -11,8 +11,11 @@
   "version": "16.14.2",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd frontend && npm install"
+    
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd client && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "start": "node index.js"
   },
   "author": "Kedar",
   "license": "ISC",
