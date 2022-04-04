@@ -12,8 +12,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodem index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
-    
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "author": "Kedar",
   "license": "ISC",
