@@ -1,20 +1,23 @@
-import Map, { Marker, Popup } from "react-map-gl";
-import { useState, useEffect } from "react";
-import mapboxgl from 'mapbox-gl';
-// eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 
 
 import "./App.css";
+import Map, { Marker, Popup } from "react-map-gl";
+import { useState, useEffect } from "react";
+/* eslint-disable import/no-webpack-loader-syntax */
+
+
 import StarIcon from "@mui/icons-material/Star";
 import CancelIcon from "@mui/icons-material/Cancel";
 import * as dayjs from "dayjs";
 import Login from "./components/LoginComponent/Login";
 import Register from "./components/RegisterComponent/Register";
 import { axiosInstance } from "./config";
-
-
 import relativeTime from "dayjs/plugin/relativeTime";
+import mapboxgl from 'mapbox-gl';
+// @ts-ignore
+
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 dayjs.extend(relativeTime);
 
 function App() {
