@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "frontend/public", "index.html"));
   });
 }
-
+// app.use(express.static('./client/dist/'));
 // app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 // app.get('*', (req, res) => {
