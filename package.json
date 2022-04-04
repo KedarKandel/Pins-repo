@@ -11,7 +11,7 @@
   "version": "16.14.2",
   "main": "index.js",
   "scripts": {
-    "start": "nodem index.js",
+    "start": "node index.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "author": "Kedar",
