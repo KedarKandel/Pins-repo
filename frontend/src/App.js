@@ -1,5 +1,6 @@
 import Map, { Marker, Popup } from "react-map-gl";
 import { useState, useEffect } from "react";
+import mapboxgl from 'mapbox-gl';
 
 import "./App.css";
 import StarIcon from "@mui/icons-material/Star";
@@ -8,7 +9,7 @@ import * as dayjs from "dayjs";
 import Login from "./components/LoginComponent/Login";
 import Register from "./components/RegisterComponent/Register";
 import axios from "axios";
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+ mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
